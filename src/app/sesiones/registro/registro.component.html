@@ -1,0 +1,86 @@
+<div id="header" class="spaceado-up-sm">
+    <h1 class="text-center">Registro de usuarios</h1>
+<hr>
+</div>
+
+<form [formGroup]="registroForm" (ngSubmit)="onAddUser()">
+
+    <!-- NOMBRES Y APELLIDOS-->
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputNombre">Nombre</label>
+            <input id="inputNombre" type="text" class="form-control" placeholder="Nombre"
+            formControlName="nombre" autofocus>
+            <p class="alert alert-danger" *ngIf="erroresForm.nombre">
+                {{erroresForm.nombre}}
+            </p>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputApellido">Apellidos</label>
+            <input id="inputApellido" type="text" class="form-control" placeholder="Apellidos"
+            formControlName="apellidos">
+            <p class="alert alert-danger" *ngIf="erroresForm.apellidos">
+                {{erroresForm.apellidos}}
+            </p>
+        </div>
+    </div>
+
+
+    <!-- CORREO ELECTRONICO-->
+    <div class="row">
+            <!--Email-->
+            <div class="form-group col-md-6">
+                <label for="inputEmail1">Correo Electronico</label>
+                <input type="email" class="form-control"
+                    formControlName="email"
+                    id="inputEmail1" aria-describedby="emailHelp" placeholder="example@correo.com">
+                <p class="alert alert-danger" *ngIf="erroresForm.email">
+                    {{erroresForm.email}}
+                </p>
+                <small id="emailHelp" class="form-text text-muted">Nunca compartas tu email con nadie, tus datos personales no se comparten.</small>
+            </div>
+
+            <!-- Contraseña-->
+            <div class="form-group col-md-6">
+                <label for="inputPassword">Contraseña</label>
+
+                <input type="password"
+                class="form-control" formControlName="password"
+                id="inputPassword" placeholder="Contraseña">
+
+                <p class="alert alert-danger" *ngIf="erroresForm.password">
+                    {{erroresForm.password}}
+                </p>
+            </div>
+
+    </div>
+
+    <br>
+
+    <!-- Enviar - Registro-->
+    <div class="row">
+        <div class="col-sm-4"> </div>
+        <button type="submit"
+                class="btn btn-primary col-sm-4 text-center"
+                [disabled]="registroForm.valid">Registrarse</button>
+    </div>
+    <hr>
+
+    <a class="alert alert-info text-center page-link" routerLink="/login"> Ya tengo una cuenta!</a>
+
+    <!-- Registrarse con Facebook - Google -->
+    <div class="form-group">
+        <a routerLink="" class="btn-social btn btn-block btn-facebook"
+                (click)="onLoginFacebook()">
+                <span class="fa fa-facebook"></span> Facebook</a>
+
+        <a routerLink="" class="btn-social btn btn-block btn-google"
+                (click)="onLoginGoogle()" >
+                <span class="fa fa-google"></span> Google</a>
+    </div>
+
+    <!--<p class="mt-5 mb-3 text-muted spaceado">&copy; 2019-2020</p>-->
+    <p class="space-above"></p>
+    <br>
+</form>

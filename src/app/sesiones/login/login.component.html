@@ -1,0 +1,54 @@
+<div class="text-center">
+    <form class="form-signin" style="width:18rem;" (submit)="onLogin()">
+        <div class="space-up2"></div>
+        <img class="mb-4" src="https://raw.githubusercontent.com/johnbayronp/tomate-bapesu/gh-pages/assets/img/user.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Inicio de sesion</h1>
+
+            <!--Email Entrada-->
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input  [(ngModel)]="email"
+                    name="emailIn"
+                    type="email" id="inEmail" class="form-control form-signin"
+                    placeholder="Email" required autofocus>
+
+            <!--Password Entrada-->
+            <label for="inputPassword" class="sr-only">Contraseña</label>
+            <input  [(ngModel)]="password"
+                    name="passIn"
+                    type="password" id="inPassword" class="form-control form-signin"
+                    placeholder="Contraseña" required>
+
+            <!-- Recuerdame check-->
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Recordarme
+                </label>
+            </div>
+
+            <!-- button Entrada - loguearse -->
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Iniciar Sesion
+            </button>
+
+            <p class="alert alert-danger" *ngIf="notRegister">
+                {{messageNotRegister}}
+            </p>
+
+            <a routerLink="/registro" class="btn text-info">No tengo cuenta, soy nuevo?</a>
+            <hr>
+
+            <div class="form-group">
+                <a routerLink="" class="btn-social btn btn-block btn-facebook"
+                        (click)="onLoginFacebook()">
+                        <span class="fa fa-facebook"></span> Facebook</a>
+
+                <a routerLink="" class="btn-social btn btn-block btn-google"
+                        (click)="onLoginGoogle()" >
+                        <span class="fa fa-google"></span> Google</a>
+            </div>
+
+            <p class="mt-5 mb-3 text-muted spaceado">&copy; 2019-2020</p>
+            <p class="space-above"></p>
+            <br>
+    </form>
+</div>

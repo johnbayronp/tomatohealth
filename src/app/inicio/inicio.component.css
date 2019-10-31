@@ -1,0 +1,223 @@
+
+
+.space{
+    padding-top:130px;
+}
+
+.background-card1{
+    background-color: #f44336d9;
+}
+
+.background-card2{
+    background-color: #00bcd4;
+}
+
+.background-card3{
+    background-color: #e5f403;
+}
+
+
+.header{
+    height: 55vh;
+    background-image: linear-gradient(
+        to left bottom,
+        #31a2b8d9,
+         #bf420ac4),
+        url(../../assets/img/tomate-pepino-c.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0% 100%, 100% 74%,100% 0 ,0 0);
+}
+
+.back-info{
+    margin-top:-60px;
+    height: 100vh;
+    background-image: linear-gradient(
+        to left bottom,
+        #31a2b8f5,
+        #bf430ae5),
+        url(../../assets/img/tomate-pepino-c.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path:polygon(-0% 21%, 214% -24%, 107% 77%, -6% 101%);
+}
+
+.title-header{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color:#777;
+}
+
+
+
+.text-box{
+    padding-top: 10%;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+/* h1 */
+.heading-primary {
+    color:white;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+}
+
+/*  heading-primary commit
+    letter-spacing: Espacio entre letras 
+    display: block espacio entre filas 
+    
+    animation-name: nombre de animacion creada
+    animation-duration: tiempo de duracion de la animacion
+    animation-delay: tiempo que espera antes de arrancar
+    animation-iteration-count: cuantas veces hace la animacion
+    */
+.heading-primary-main {
+    display: block;
+    font-size: 10vw;
+    font-weight: 300;
+    letter-spacing: 25px;
+
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    /*
+    animation-delay: 2s;
+    animation-iteration-count: 3;
+    */
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2vw;
+    font-weight: 300;
+    letter-spacing: 5px;
+
+    animation-name: moveInRight;
+    animation-duration: 3s;
+}
+
+/* Animacion commit
+    Creacion de animacion , 
+    translateX(Movimiento en eje x)
+    translate (0)
+*/
+@keyframes moveInLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    /*
+    60%{
+        transform: rotate(180deg);
+    }
+    */
+    80%{
+        transform: translateX(5px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight { 
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-5px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom { 
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* btn commit
+padding: tamaño_left and right  tamaño_top and bottom;
+text-decoration: sin color por default;
+box-shadow: crea una sombra 
+*/
+.btn1:link,
+.btn1:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding:1.5vw 1.2vh; 
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+
+    margin-bottom: 8em;
+}
+.btn1:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);    
+}
+
+.btn1:active { 
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btn-white {
+    background-color: white;
+    color: #777;
+}
+
+/*pseudo-element
+*/
+.btn1::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%; 
+    border-radius: 100px;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition: all .3s;
+}
+
+.btn-white::after{
+    background-color: rgba(255, 255, 255, 0.692);
+}
+
+.btn1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* btn-animated commit
+animation: propiedad() duration , propiedad , delay; 
+animation-fill-mode: backwards (toma el primer frame y espera el delay)*/
+.btn-animated {
+    animation: moveInBottom 1s ease-out 2s;
+    animation-fill-mode: backwards;
+}
