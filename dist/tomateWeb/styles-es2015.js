@@ -598,8 +598,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/johnperez/Escritorio/proyecto_grado/tomateWeb/node_modules/font-awesome/css/font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
-module.exports = __webpack_require__(/*! /home/johnperez/Escritorio/proyecto_grado/tomateWeb/src/styles.css */"./src/styles.css");
+__webpack_require__(/*! /home/johnperez/Escritorio/proyecto_grado/tomatohealth/tomatohealth/node_modules/font-awesome/css/font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
+module.exports = __webpack_require__(/*! /home/johnperez/Escritorio/proyecto_grado/tomatohealth/tomatohealth/src/styles.css */"./src/styles.css");
 
 
 /***/ })
